@@ -27,3 +27,24 @@ resource "azurerm_mssql_database" "appdb" {
 
   depends_on = [ azurerm_mssql_server.sqlserver ]
 }
+
+//fitewall ruless
+//client ip adress add >> start and end 
+
+
+resource "azurerm_mssql_firewall_rule" "firewallrule" {
+  name             = "myfirewallrules"
+  server_id        = azurerm_mssql_server.sqlserver.id
+  start_ip_address = "151.186.177.37"
+  end_ip_address   = "151.186.177.37"
+}
+
+
+//locals.tf
+
+locals {
+  resource_group_name = "app-grp"
+  location            = "Central US"
+   
+ 
+}
