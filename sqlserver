@@ -40,7 +40,7 @@ resource "azurerm_mssql_firewall_rule" "firewallrule" {
 }
 
 
-//locals.tf
+//locals.tfhh
 
 locals {
   resource_group_name = "app-grp"
